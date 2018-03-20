@@ -3,27 +3,21 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="">
-        <meta name="author" content="">
-        <link rel="icon" href="../../../../favicon.ico">
 
         <title>Pricing example for Bootstrap</title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-              crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <!-- Custom styles for this template -->
-        <link href="pricing.css" rel="stylesheet">
+        <link href="{{ asset('css/pricing.css') }}" rel="stylesheet">
     </head>
 
     <body>
 
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
             <h5 class="my-0 mr-md-auto font-weight-normal">Styde</h5>
-            <a class="btn btn-outline-primary" href="{{ route('logout') }}" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
+            <a class="btn btn-outline-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                 Logout
             </a>
             <form id="logout-form" method="POST" action="{{ route('logout') }}">
@@ -53,7 +47,7 @@
                             <li>Un solo pago de 99 USD</li>
                             <li>Acceso por un año</li>
                         </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary">Plan Anual</button>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=2">Plan Anual</a>
                     </div>
                 </div>
                 <div class="card mb-4 box-shadow">
@@ -72,7 +66,8 @@
                             <li>Un solo pago de 59.70 USD</li>
                             <li>Acceso por sesi meses</li>
                         </ul>
-                        <button type="button" class="btn btn-lg btn-block btn-primary">Plan Semestral</button>
+                        {{--<button type="button" class="btn btn-lg btn-block btn-primary">Plan Semestral</button>--}}
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=11">Plan Semestral</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +77,7 @@
                     <div class="col-12 col-md">
                         <img class="mb-2" src="{{ asset('images/styde.png') }}" alt=""
                              width="24" height="24">
-                        <small class="d-block mb-3 text-muted">&copy; 2017-2018</small>
+                        <small class="d-block mb-3 text-muted">&copy; 2018</small>
                     </div>
                 </div>
             </footer>
@@ -92,19 +87,6 @@
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-                crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-        <script src="../../../../assets/js/vendor/popper.min.js"></script>
-        <script src="../../../../dist/js/bootstrap.min.js"></script>
-        <script src="../../../../assets/js/vendor/holder.min.js"></script>
-        <script>
-            Holder.addTheme('thumb', {
-                bg: '#55595c',
-                fg: '#eceeef',
-                text: 'Thumbnail'
-            });
-        </script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     </body>
 </html>

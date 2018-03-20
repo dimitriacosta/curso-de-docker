@@ -7,6 +7,35 @@ html {
     }
 }
 
+body {
+    background-color: #141424;
+    color: #f9f9f9;
+}
+
+footer {
+    color: #f9f9f9;
+}
+
+.mb-2 {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.btn-plan {
+    background-color: #d8bf6e;
+    color: #010101;
+    border-color: transparent;
+}
+
+.btn-plan:hover {
+    background-color: #e2d098;
+}
+
+.card-deck {
+    color: #212529;
+}
+
 .container {
     max-width: 960px;
 }
@@ -23,9 +52,3 @@ html {
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
 .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
-
-.mb-2 {
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-}

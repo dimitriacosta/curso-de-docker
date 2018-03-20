@@ -18,8 +18,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/floating-labels.css') }}">
 </head>
@@ -30,7 +29,7 @@
                 @csrf
 
                 <div class="text-center mb-4">
-                    <img class="mb-4" src="https://styde.net/wp-content/themes/styde/img/styde-w-o.png" alt="StydeNet">
+                    <img class="mb-4" src="{{ asset('images/styde.png') }}" alt="StydeNet" width="70" height="70" style="-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;">
                     <h1 class="h3 mb-3 font-weight-normal">Curso de Docker</h1>
                     <p>
                         Curso de Docker para Developers y DevOps disponible en
@@ -68,7 +67,7 @@
                         <input type="checkbox" value="remember-me"> Recordar mis datos
                     </label>
                 </div>
-                <button class="btn btn-lg btn-login btn-block" type="submit">Iniciar</button>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar</button>
             </form>
         </div>
     </div>

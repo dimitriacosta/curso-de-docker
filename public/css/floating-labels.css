@@ -20,8 +20,8 @@ body {
     justify-content: center;
     padding-top: 40px;
     padding-bottom: 40px;
-    background-color: #141424;
-    color: #f9f9f9;
+    /*background-color: #141424;*/
+    /*color: #f9f9f9;*/
 }
 
 a {
@@ -31,18 +31,6 @@ a {
 
 a:hover {
     color: #d8574b;
-}
-
-.btn-login {
-    background-color: #d8bf6e;
-    color: #010101;
-    border-color: transparent;
-}
-
-.btn-login:hover {
-    background-color: #e2d098;
-    color: #010101;
-    border-color: transparent;
 }
 
 .form-signin {
