@@ -34,5 +34,6 @@ COPY php-fpm.conf /etc/php/7.2/fpm/php-fpm.conf
 EXPOSE 80
 
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+WORKDIR /var/www/html
 
 CMD ["/usr/bin/supervisord"]

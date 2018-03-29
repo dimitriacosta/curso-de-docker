@@ -7,7 +7,9 @@
         <title>Pricing example for Bootstrap</title>
 
         <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+              crossorigin="anonymous">
 
         <!-- Custom styles for this template -->
         <link href="{{ asset('css/pricing.css') }}" rel="stylesheet">
@@ -32,42 +34,50 @@
         <div class="container">
             <div class="card-deck mb-3 text-center">
                 <div class="card mb-4 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">
-                            Plan Anual
-                            <strike>149 USD</strike>
-                        </h4>
-                    </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">
-                            8<sup>25</sup>
-                            <small class="text-muted">$/Mes</small>
+                            PHP
                         </h1>
                         <ul class="list-unstyled mt-3 mb-4">
-                            <li>Un solo pago de 99 USD</li>
-                            <li>Acceso por un año</li>
+                            Conoce los conceptos de PHP desde cero hasta convertirte en un profesional
                         </ul>
-                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=2">Plan Anual</a>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=2">Ver cursos de PHP</a>
                     </div>
                 </div>
                 <div class="card mb-4 box-shadow">
-                    <div class="card-header">
-                        <h4 class="my-0 font-weight-normal">
-                            Plan Semestral
-                            <strike>79 USD</strike>
-                        </h4>
-                    </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">
-                            9<sup>95</sup>
-                            <small class="text-muted">$/mes</small>
+                            Laravel
                         </h1>
                         <ul class="list-unstyled mt-3 mb-4">
-                            <li>Un solo pago de 59.70 USD</li>
-                            <li>Acceso por sesi meses</li>
+                            Conoce el framework mas popular de PHP y crea aplicaciones robustas y escalables
                         </ul>
-                        {{--<button type="button" class="btn btn-lg btn-block btn-primary">Plan Semestral</button>--}}
-                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=11">Plan Semestral</a>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=11">Ver cursos de Laravel</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-deck mb-3 text-center">
+                <div class="card mb-4 box-shadow">
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            Administración y congiguración
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            Conoce las mejores técnicas de flujo de trabajo y aprende a configurar tus servidores de manera efectiva.
+                        </ul>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=2">Ver cursos de administración y configuración</a>
+                    </div>
+                </div>
+                <div class="card mb-4 box-shadow">
+                    <div class="card-body">
+                        <h1 class="card-title pricing-card-title">
+                            Herramientas Front-End
+                        </h1>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            Conoce las mejores herramientas Front-end para el desarrollo de tus aplicaciones WEB
+                        </ul>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=11">Ver cursos de herramientas front-end</a>
                     </div>
                 </div>
             </div>
@@ -87,6 +97,8 @@
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                crossorigin="anonymous"></script>
     </body>
 </html>
