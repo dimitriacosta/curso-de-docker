@@ -8,11 +8,11 @@ node('master') {
 
         sh "./develop composer install"
 
-        sh 'cp .env.example .env'
+        sh 'cp /var/lib/jenkins/persistent/.env.testing .env.testing'
         sh './develop art key:generate'
     }
     stage('test') {
-        sh "APP_ENV=testing ./develop test"
+        sh "./develop test"
     }
     stage('cleanup') {
         sh "./develop stop"
