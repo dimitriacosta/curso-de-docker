@@ -8,8 +8,16 @@ export MYSQL_DATABASE=${MYSQL_DATABASE:-styde}
 export MYSQL_USER=${MYSQL_USER:-styde} 
 export MYSQL_PASSWORD=${MYSQL_PASSWORD:-secret}
 
-COMPOSE="docker-compose"
-PSRESULT=$(docker-compose ps -q)
+COMPOSE_FILE="dev"
+TTY=""
+
+if [ ! -z "$BUILD_NUMBER" ]; then
+    COMPOSE_FILE="ci"
+    TTY="-T"
+fi
+
+COMPOSE="docker-compose -f docker-compose.$COMPOSE_FILE.yml"
+PSRESULT=$($COMPOSE ps -q)
 
 if [ ! -z "$PSRESULT" ]; then
     EXEC="yes"
@@ -34,11 +42,11 @@ if [ $# -gt 0 ]; then
     elif [ "$1" == "artisan" ] || [ "$1" == "art" ]; then
         shift 1
         if [ "$EXEC" == "yes" ]; then
-            $COMPOSE exec \
+            $COMPOSE exec $TTY \
                 app \
                 php artisan "$@"
         else
-            $COMPOSE run --rm \
+            $COMPOSE run --rm $TTY \
                 -w /var/www/html \
                 app \
                 php artisan "$@"
@@ -49,11 +57,11 @@ if [ $# -gt 0 ]; then
     elif [ "$1" == "composer" ] || [ "$1" == "comp" ]; then
         shift 1
         if [ "$EXEC" == "yes" ]; then
-            $COMPOSE exec \
+            $COMPOSE exec $TTY \
                 app \
                 composer "$@"
         else
-            $COMPOSE run --rm \
+            $COMPOSE run --rm $TTY \
                 -w /var/www/html \
                 app \
                 composer "$@"
@@ -64,11 +72,11 @@ if [ $# -gt 0 ]; then
     elif [ "$1" == "test" ] || [ "$1" == "t" ]; then
         shift 1
         if [ "$EXEC" == "yes" ]; then
-            $COMPOSE exec \
+            $COMPOSE exec $TTY \
                 app \
                 ./vendor/bin/phpunit "$@"
         else
-            $COMPOSE run --rm \
+            $COMPOSE run --rm $TTY \
                 -w /var/www/html \
                 app \
                 ./vendor/bin/phpunit "$@"
@@ -78,7 +86,7 @@ if [ $# -gt 0 ]; then
     # from our node container
     elif [ "$1" == "npm" ]; then
         shift 1
-        $COMPOSE run --rm \
+        $COMPOSE run --rm $TTY \
             -w /var/www/html \
             node \
             npm "$@"
@@ -87,7 +95,7 @@ if [ $# -gt 0 ]; then
     # from our node container
     elif [ "$1" == "gulp" ]; then
         shift 1
-        $COMPOSE run --rm \
+        $COMPOSE run --rm $TTY \
             -w /var/www/html \
             node \
             ./node_modules/.bin/gulp "$@"
@@ -96,7 +104,7 @@ if [ $# -gt 0 ]; then
     # from our node container
     elif [ "$1" == "yarn" ]; then
         shift 1
-        $COMPOSE run --rm \
+        $COMPOSE run --rm $TTY \
             -w /var/www/html \
             node \
             yarn "$@"

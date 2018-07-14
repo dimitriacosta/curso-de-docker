@@ -1,0 +1,29 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./docker/app
+      dockerfile: Dockerfile
+    image: stydedocker/app
+    volumes:
+     - .:/var/www/html
+    networks:
+     - stydenet
+  node:
+    image: node:9.8
+    volumes:
+     - .:/var/www/html
+    networks:
+     - stydenet
+  redis:
+    image: redis:alpine
+    volumes:
+     - redisdata:/data
+    networks:
+     - stydenet
+networks:
+  stydenet:
+    driver: "bridge"
+volumes:
+  redisdata:
+    driver: "local"
