@@ -6,36 +6,36 @@ services:
       dockerfile: Dockerfile
     image: stydedocker/app
     volumes:
-     - .:/var/www/html
+      - .:/var/www/html
     ports:
-     - "${APP_PORT}:80"
+      - "${APP_PORT}:80"
     networks:
-     - stydenet
+      - stydenet
   node:
     image: node:9.8
     volumes:
-     - .:/var/www/html
+      - .:/var/www/html
     networks:
-     - stydenet
+      - stydenet
   mysql:
     image: mysql:5.7
     ports:
-     - "${MYSQL_PORT}:3306"
+      - "${MYSQL_PORT}:3306"
     environment:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
       MYSQL_USER: "${MYSQL_USER}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
     volumes:
-     - mysqldata:/var/lib/mysql
+      - mysqldata:/var/lib/mysql
     networks:
-     - stydenet
+      - stydenet
   redis:
     image: redis:alpine
     volumes:
-     - redisdata:/data
+      - redisdata:/data
     networks:
-     - stydenet
+      - stydenet
 networks:
   stydenet:
     driver: "bridge"

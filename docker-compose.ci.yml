@@ -6,24 +6,19 @@ services:
       dockerfile: Dockerfile
     image: stydedocker/app
     volumes:
-     - .:/var/www/html
+      - .:/var/www/html
     networks:
-     - stydenet
+      - stydenet
   node:
     image: node:9.8
     volumes:
-     - .:/var/www/html
+      - .:/var/www/html
     networks:
-     - stydenet
+      - stydenet
   redis:
     image: redis:alpine
-    volumes:
-     - redisdata:/data
     networks:
-     - stydenet
+      - stydenet
 networks:
   stydenet:
     driver: "bridge"
-volumes:
-  redisdata:
-    driver: "local"
