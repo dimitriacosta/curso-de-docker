@@ -1,20 +1,38 @@
 #!/usr/bin/env groovy
 
 node('master') {
-    stage('build') {
-        git url: 'git@github.com:dimitriacosta/curso-de-docker.git'
+    try {
+        stage('build') {
+            git url: 'git@github.com:dimitriacosta/curso-de-docker.git'
 
-        sh "./develop start"
+            // iniciar contenedores
+            sh "./develop start"
 
-        sh "./develop composer install"
+            // instalar dependencias con composer
+            sh "./develop composer install"
 
-        sh 'cp /var/lib/jenkins/persistent/.env.testing .env.testing'
-        sh './develop art key:generate'
+            // copiar archivo .env para pruebas
+            sh 'cp /var/lib/jenkins/persistent/.env.testing .env.testing'
+            sh './develop art key:generate'
+        }
+        stage('test') {
+            // ejecutar pruebas
+            sh "./develop test"
+        }
+        if (env.BRANCH_NAME == 'master') {
+            stage('package') {
+                // construir imagen de docker para producción
+                sh "echo 'build image'"
+                // sh "docker/build"
+            }
+        }
     }
-    stage('test') {
-        sh "./develop test"
+    catch(Exception e) {
+        // administrar errores
+        throw e
     }
-    stage('cleanup') {
+    finally {
+        // detener contenedores
         sh "./develop stop"
     }
 }
