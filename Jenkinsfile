@@ -13,7 +13,7 @@ node('master') {
 
             // copiar archivo .env para pruebas
             sh 'cp /var/lib/jenkins/persistent/.env.testing .env.testing'
-            sh './develop art key:generate'
+            // sh './develop art key:generate'
         }
         stage('test') {
             // ejecutar pruebas
