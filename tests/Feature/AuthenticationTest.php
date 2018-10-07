@@ -60,7 +60,7 @@ class AuthenticationTest extends TestCase
             'password' => 'secret',
             'password_confirmation' => 'secret',
         ]);
-        $response->assertRedirect('/home');
+        $response->assertRedirect('/');
         $this->assertDatabaseHas('users', [
             'name' => 'John Doe',
             'username' => 'johndoe',
