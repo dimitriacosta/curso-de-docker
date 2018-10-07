@@ -157,9 +157,9 @@ class AuthenticationTest extends TestCase
         ]);
     }
 
-    /** @test */
-    public function show_env_variable()
-    {
-        $this->assertEquals('STYDE12345.#!', env('TEST_KEY'));
-    }
+    // /** @test */
+    // public function show_env_variable()
+    // {
+    //     $this->assertEquals('STYDE12345.#!', env('TEST_KEY'));
+    // }
 }
