@@ -39,9 +39,9 @@
                             PHP
                         </h1>
                         <ul class="list-unstyled mt-3 mb-4">
-                            Conoce los conceptos de PHP desde cero hasta convertirte en un profesional
+                            Cursos de PHP puro y conceptos de programación en PHP.
                         </ul>
-                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=2">Ver cursos de PHP</a>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/curso-de-programacion-orientada-a-objetos-con-php/">Programación Orientada a Objetos</a>
                     </div>
                 </div>
                 <div class="card mb-4 box-shadow">
@@ -50,9 +50,9 @@
                             Laravel
                         </h1>
                         <ul class="list-unstyled mt-3 mb-4">
-                            Conoce el framework mas popular de PHP y crea aplicaciones robustas y escalables
+                            Cursos especializados para el desarrollo de aplicaciones con Laravel.
                         </ul>
-                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=11">Ver cursos de Laravel</a>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/laravel-5/">Curso de Laravel desde cero</a>
                     </div>
                 </div>
             </div>
@@ -64,9 +64,9 @@
                             Administración y congiguración
                         </h1>
                         <ul class="list-unstyled mt-3 mb-4">
-                            Conoce las mejores técnicas de flujo de trabajo y aprende a configurar tus servidores de manera efectiva.
+                            Cursos de manejo de servidores, control de versiones y otras herramientas.
                         </ul>
-                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=2">Ver cursos de administración y configuración</a>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/curso-de-docker/">Curso de Docker</a>
                     </div>
                 </div>
                 <div class="card mb-4 box-shadow">
@@ -75,9 +75,9 @@
                             Herramientas Front-End
                         </h1>
                         <ul class="list-unstyled mt-3 mb-4">
-                            Conoce las mejores herramientas Front-end para el desarrollo de tus aplicaciones WEB
+                            Cursos de herramientas de front end, estilos, frameworks y build systems.
                         </ul>
-                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/registro/?level=11">Ver cursos de herramientas front-end</a>
+                        <a class="btn btn-primary btn-lg btn-block" href="https://styde.net/curso-de-vue-2/">Curso de Vue 2</a>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,7 @@
                     <div class="col-12 col-md">
                         <img class="mb-2" src="{{ asset('images/styde.png') }}" alt=""
                              width="24" height="24">
-                        <small class="d-block mb-3 text-muted">&copy; 2018</small>
+                        <small class="d-block mb-3 text-muted">&copy; {{ \Carbon\Carbon::now()->year }}</small>
                     </div>
                 </div>
             </footer>
