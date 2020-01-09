@@ -87,7 +87,7 @@
                     <div class="col-12 col-md">
                         <img class="mb-2" src="{{ asset('images/styde.png') }}" alt=""
                              width="24" height="24">
-                        <small class="d-block mb-3 text-muted">&copy; {{ \Carbon\Carbon::now()->year }}</small>
+                        <small class="d-block mb-3 text-muted">&copy; 2018-{{ \Carbon\Carbon::now()->year }}</small>
                     </div>
                 </div>
             </footer>

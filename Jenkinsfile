@@ -5,34 +5,34 @@ node('master') {
         stage('build') {
             git url: 'git@github.com:dimitriacosta/curso-de-docker.git'
 
-            // Start containers
+            /* Start containers */
             sh "./develop start"
 
-            // Install composer dependencies
+            /* Install composer dependencies */
             sh "./develop composer install"
 
-            // Copy .env file for testing
+            /* Copy .env file for testing */
             sh 'cp /var/lib/jenkins/persistent/.env.testing .env.testing'
             sh './develop art --env=testing key:generate'
         }
         stage('test') {
-            // Run tests
+            /* Run tests */
             sh "./develop test"
         }
         if (env.BRANCH_NAME == 'master') {
             stage('package') {
-                // Build docker image for production
+                /* Build docker image for production */
                 sh "echo 'build image'"
-                // sh "docker/build"
+                /* sh "docker/build" */
             }
         }
     }
     catch(Exception e) {
-        // Manage errors
+        /* Manage errors */
         throw e
     }
     finally {
-        // Stop containers
+        /* Stop containers */
         sh "./develop down -v"
     }
 }
