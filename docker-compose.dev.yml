@@ -14,7 +14,7 @@ services:
       - stydenet
   node:
     container_name: node
-    image: node:9.8
+    image: node:13.10
     volumes:
       - .:/var/www/html
     networks:
